@@ -1,2 +1,3 @@
 module filmarkiv {
+	requires junit;
 }

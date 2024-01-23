@@ -1,10 +1,9 @@
 package no.hvl.data102.filmarkiv.test;
-// import org.junit.Test;
-
-import org.junit.Assert.assertEquals;
-import org.junit.Test;
-
 // import lib.junit;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 public class FilmarkivTest {
     @Test
