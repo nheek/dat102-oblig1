@@ -5,7 +5,7 @@ public class Film {
     private String filmskaper;
     private String tittel;
     private int aar;
-    private SJANGER sjanger;
+    private Sjanger sjanger;
     private String filmselskap;
     
     public Film(int filmNR, String filmskaper, String tittel, int aar, Sjanger sjanger, String filmselskap) {
