@@ -1,5 +1,7 @@
 package no.hvl.data102.filmarkiv.impl;
-import no.hvl.data102.filmarkiv.impl.Sjanger;
+
+import java.util.Objects;
+
 public class Film {
     private int filmNR;
     private String filmskaper;
@@ -7,7 +9,7 @@ public class Film {
     private int aar;
     private Sjanger sjanger;
     private String filmselskap;
-    
+
     public Film(int filmNR, String filmskaper, String tittel, int aar, Sjanger sjanger, String filmselskap) {
         this.filmNR = filmNR;
         this.filmskaper = filmskaper;
@@ -16,7 +18,7 @@ public class Film {
         this.sjanger = sjanger;
         this.filmselskap = filmselskap;
     }
-    
+
     // Hent and sett methods for filmNR
     public int hentFilmNR() {
         return filmNR;
@@ -71,7 +73,22 @@ public class Film {
         this.filmselskap = filmselskap;
     }
     
-    public static void main(String[] args) {
-        System.out.println("test");
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        
+        Film annenFilm = (Film) obj;
+        return filmNR == annenFilm.filmNR;
     }
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(filmNR);
+    }
+
 }

@@ -5,7 +5,7 @@ import no.hvl.data102.filmarkiv.impl.Sjanger;
 
 public interface FilmArkivADT {
     /**
-     * 
+     *
      * @param nr
      * @return
      */
