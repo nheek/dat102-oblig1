@@ -23,19 +23,19 @@ public class Meny {
 	    filmarkiv.leggTilFilm(film3);
 	    
 	    // skrivUtFilm testet og funker
-	    //tekstgr.skrivUtFilm(film1);
+	    tekstgr.skrivUtFilm(film1);
 	    
 	    // skrivUtFilmDelstrengITittle testet og funker
-	    //tekstgr.skrivUtFilmDelstrengITittel(filmarkiv, "Title");
+	    tekstgr.skrivUtFilmDelstrengITittel(filmarkiv, "Title");
 	    
-	    // skrivUtFilmProdusent testet og IKKE funker
+	    // skrivUtFilmProdusent testet og delvis funker
 	    tekstgr.skrivUtFilmProdusent(filmarkiv, "Filmsk");
 
 	    // skrivUtFilm og lesFilm testet og funker
-	    //tekstgr.skrivUtFilm(tekstgr.lesFilm());
+	    tekstgr.skrivUtFilm(tekstgr.lesFilm());
 	    
 	    // skrivUtStatistikk testet og funker
-	    //tekstgr.skrivUtStatistikk(filmarkiv);
+	    tekstgr.skrivUtStatistikk(filmarkiv);
 	    
 	}
 }

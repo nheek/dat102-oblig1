@@ -27,6 +27,7 @@ public class Filmarkiv2 implements FilmArkivADT {
 
     @Override
     public void leggTilFilm(Film nyFilm) {
+    	// TODO Auto-generated method stub
         LinearNode<Film> newNode = new LinearNode<>(nyFilm);
 
         if (start == null) {
@@ -67,27 +68,66 @@ public class Filmarkiv2 implements FilmArkivADT {
         return false;
     }
 
-	@Override
-	public Film[] soekTittel(String delstreng) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Film[] soekTittel(String delstreng) {
+    	// TODO Auto-generated method stub
+        Film[] result = new Film[antall];
+        int index = 0;
+        LinearNode<Film> current = start;
 
-	@Override
-	public Film[] soekProdusent(String delstreng) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+        while (current != null) {
+            if (current.getElement().hentTittel().contains(delstreng)) {
+                result[index++] = current.getElement();
+            }
+            current = current.getNext();
+        }
+        
+        // håper den funker
+        Film[] trimmedResult = new Film[index];
+        System.arraycopy(result, 0, trimmedResult, 0, index);
 
-	@Override
-	public int antall(Sjanger sjanger) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+        return trimmedResult;
+    }
 
-	@Override
-	public int antall() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    @Override
+    public Film[] soekProdusent(String delstreng) {
+    	// TODO Auto-generated method stub
+        Film[] result = new Film[antall];
+        int index = 0;
+        LinearNode<Film> current = start;
+
+        while (current != null) {
+            if (current.getElement().hentFilmskaper().contains(delstreng)) {
+                result[index++] = current.getElement();
+            }
+            current = current.getNext();
+        }
+        
+        // håper den funker
+        Film[] trimmedResult = new Film[index];
+        System.arraycopy(result, 0, trimmedResult, 0, index);
+
+        return trimmedResult;
+    }
+    @Override
+    public int antall(Sjanger sjanger) {
+    	// TODO Auto-generated method stub
+        int count = 0;
+        LinearNode<Film> current = start;
+
+        while (current != null) {
+            if (current.getElement().hentSjanger() == sjanger) {
+                count++;
+            }
+            current = current.getNext();
+        }
+
+        return count;
+    }
+
+    @Override
+    public int antall() {
+    	// TODO Auto-generated method stub
+        return antall;
+    }
 }
